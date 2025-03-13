@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     musicToggle.addEventListener('click', () => {
         if (isPlaying) {
             birthdaySong.pause();
-            musicToggle.innerHTML = '<i class="fas fa-music"></i>';
+            musicToggle.innerHTML = '<i class="fas fa-music"></i><span class="music-text">תנגן אותי</span>';
         } else {
             birthdaySong.play();
-            musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
+            musicToggle.innerHTML = '<i class="fas fa-pause"></i><span class="music-text">עצור</span>';
         }
         isPlaying = !isPlaying;
     });
