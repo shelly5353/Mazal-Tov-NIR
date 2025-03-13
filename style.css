@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #4a4a4a);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    color: white;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.birthday-message {
+    margin-bottom: 3rem;
+}
+
+.birthday-message h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.birthday-message p {
+    font-size: 2rem;
+    margin: 1rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.birthday-message p:nth-child(1) { animation-delay: 0.2s; }
+.birthday-message p:nth-child(2) { animation-delay: 0.4s; }
+.birthday-message p:nth-child(3) { animation-delay: 0.6s; }
+.birthday-message p:nth-child(4) { animation-delay: 0.8s; }
+.birthday-message p:nth-child(5) { animation-delay: 1s; }
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.photo-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.photo-container:hover {
+    transform: scale(1.05);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.balloons {
+    position: fixed;
+    width: 50px;
+    height: 60px;
+    background: radial-gradient(circle at 30% 30%, #ff69b4, #ff1493);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+    z-index: 0;
+}
+
+.balloons:nth-child(2) {
+    background: radial-gradient(circle at 30% 30%, #87ceeb, #4169e1);
+    animation-delay: 2s;
+}
+
+.balloons:nth-child(3) {
+    background: radial-gradient(circle at 30% 30%, #98fb98, #32cd32);
+    animation-delay: 4s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-100px) rotate(180deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .birthday-message h1 {
+        font-size: 2.5rem;
+    }
+    
+    .birthday-message p {
+        font-size: 1.5rem;
+    }
+    
+    .photo-gallery {
+        grid-template-columns: 1fr;
+    }
+} 
