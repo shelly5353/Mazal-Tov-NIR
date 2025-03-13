@@ -91,9 +91,10 @@ body {
 
 .photo-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
     margin-top: 3rem;
+    padding: 0 1rem;
 }
 
 .photo {
@@ -102,8 +103,8 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    aspect-ratio: 4/3;
-    height: 250px;
+    width: 100%;
+    padding-bottom: 75%; /* יחס גובה-רוחב 4:3 */
 }
 
 .photo:hover {
@@ -112,6 +113,9 @@ body {
 }
 
 .photo img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -250,11 +254,8 @@ body {
     }
     
     .photo-gallery {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-    
-    .photo {
-        height: 200px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
     }
 }
 
@@ -275,13 +276,9 @@ body {
         padding: 1.5rem;
     }
     
-    .photo {
-        height: 180px;
-    }
-    
     .photo-gallery {
         grid-template-columns: 1fr;
-        max-width: 350px;
+        max-width: 400px;
         margin-left: auto;
         margin-right: auto;
     }
