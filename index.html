@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מזל טוב ניר!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="audio-control">
+        <button id="toggleAudio">
+            <span class="play-icon">▶️</span>
+            <span class="pause-icon">⏸️</span>
+        </button>
+    </div>
+
+    <div class="container">
+        <div class="header animate__animated animate__fadeInDown">
+            <h1 class="main-title">מזל טוב ניר!</h1>
+        </div>
+
+        <div class="greeting-card animate__animated animate__zoomIn animate__delay-1s">
+            <div class="greeting-text">
+                <p class="line animate__animated animate__fadeInRight animate__delay-2s">ניר שותפי הבכיר</p>
+                <p class="line animate__animated animate__fadeInRight animate__delay-2s">מזל טוב המון</p>
+                <p class="line animate__animated animate__fadeInRight animate__delay-3s">תהנה מיליון</p>
+                <p class="line animate__animated animate__fadeInRight animate__delay-3s">ותחגוג עם בלון</p>
+                <p class="line animate__animated animate__fadeInRight animate__delay-4s">אוהבת אותך אח, תן בראש</p>
+            </div>
+        </div>
+
+        <div class="photo-gallery">
+            <div class="photo animate__animated animate__fadeIn animate__delay-4s" id="photo1">
+                <img src="photos/BBQ.jpeg" alt="ניר במנגל">
+            </div>
+            <div class="photo animate__animated animate__fadeIn animate__delay-5s" id="photo2">
+                <img src="photos/Nir & Car.jpeg" alt="ניר והרכב">
+            </div>
+            <div class="photo animate__animated animate__fadeIn animate__delay-6s" id="photo3">
+                <img src="photos/young.JPG" alt="ניר צעיר">
+            </div>
+            <div class="photo animate__animated animate__fadeIn animate__delay-7s" id="photo4">
+                <img src="photos/MT Tavor.JPG" alt="ניר בהר תבור">
+            </div>
+        </div>
+
+        <div class="confetti-container" id="confetti-container"></div>
+        
+        <div class="balloons">
+            <div class="balloon" id="balloon1"></div>
+            <div class="balloon" id="balloon2"></div>
+            <div class="balloon" id="balloon3"></div>
+            <div class="balloon" id="balloon4"></div>
+            <div class="balloon" id="balloon5"></div>
+        </div>
+    </div>
+
+    <audio id="birthdaySong" loop>
+        <source src="שיר היומולדת.mp3" type="audio/mpeg">
+        הדפדפן שלך לא תומך בתג האודיו.
+    </audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
