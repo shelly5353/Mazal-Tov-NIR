@@ -1,8 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Start playing the birthday song
+    // Music control
     const birthdaySong = document.getElementById('birthdaySong');
-    birthdaySong.play().catch(error => {
-        console.log("Audio playback failed:", error);
+    const musicToggle = document.getElementById('musicToggle');
+    let isPlaying = false;
+
+    musicToggle.addEventListener('click', () => {
+        if (isPlaying) {
+            birthdaySong.pause();
+            musicToggle.innerHTML = '<i class="fas fa-music"></i>';
+        } else {
+            birthdaySong.play();
+            musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
+        }
+        isPlaying = !isPlaying;
     });
 
     // Create floating balloons
@@ -39,5 +49,26 @@ document.addEventListener('DOMContentLoaded', () => {
         photo.addEventListener('mouseout', () => {
             photo.style.transform = 'scale(1)';
         });
+    });
+
+    // Add scroll reveal animation
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.photo-container').forEach(container => {
+        container.style.opacity = '0';
+        container.style.transform = 'translateY(20px)';
+        container.style.transition = 'all 0.6s ease-out';
+        observer.observe(container);
     });
 }); 

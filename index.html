@@ -6,21 +6,32 @@
     <title>מזל טוב ניר!</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <div class="hero-section">
+        <div class="hero-content">
+            <img src="photos/BBQ.jpeg" alt="Nir" class="hero-image">
+            <div class="music-control">
+                <button id="musicToggle" class="music-button">
+                    <i class="fas fa-music"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="birthday-message">
             <h1 class="animate-text">ניר שותפי הבכיר</h1>
-            <p class="animate-text">מזל טוב המון</p>
-            <p class="animate-text">תהנה מיליון</p>
-            <p class="animate-text">ותחגוג עם בלון</p>
-            <p class="animate-text">אוהבת אותך אח, תן בראש</p>
+            <div class="message-container">
+                <p class="animate-text">מזל טוב המון</p>
+                <p class="animate-text">תהנה מיליון</p>
+                <p class="animate-text">ותחגוג עם בלון</p>
+                <p class="animate-text">אוהבת אותך אח, תן בראש</p>
+            </div>
         </div>
 
         <div class="photo-gallery">
-            <div class="photo-container">
-                <img src="photos/BBQ.jpeg" alt="BBQ" class="gallery-img">
-            </div>
             <div class="photo-container">
                 <img src="photos/Nir & Car.jpeg" alt="Nir & Car" class="gallery-img">
             </div>
@@ -31,11 +42,11 @@
                 <img src="photos/MT Tavor.JPG" alt="MT Tavor" class="gallery-img">
             </div>
         </div>
-
-        <div class="balloons"></div>
-        <div class="balloons"></div>
-        <div class="balloons"></div>
     </div>
+
+    <div class="balloons"></div>
+    <div class="balloons"></div>
+    <div class="balloons"></div>
 
     <audio id="birthdaySong" loop>
         <source src="שיר היומולדת.mp3" type="audio/mpeg">

@@ -6,50 +6,115 @@
 
 body {
     font-family: 'Rubik', sans-serif;
-    background: linear-gradient(135deg, #1a1a1a, #4a4a4a);
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
     min-height: 100vh;
+    color: #2d3436;
+    overflow-x: hidden;
+}
+
+.hero-section {
+    height: 60vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+}
+
+.hero-content {
+    position: relative;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-x: hidden;
-    color: white;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.9);
+    transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+    transform: scale(1.05);
+}
+
+.music-control {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 10;
+}
+
+.music-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.music-button:hover {
+    transform: scale(1.1);
+    background: white;
+}
+
+.music-button i {
+    font-size: 24px;
+    color: #ff6b6b;
 }
 
 .container {
-    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 2rem;
     position: relative;
     z-index: 1;
 }
 
 .birthday-message {
-    margin-bottom: 3rem;
+    text-align: center;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .birthday-message h1 {
     font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    color: #ffd700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+    color: #ff6b6b;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .birthday-message p {
     font-size: 2rem;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.8s ease forwards;
+    color: #2d3436;
 }
 
 .birthday-message p:nth-child(1) { animation-delay: 0.2s; }
 .birthday-message p:nth-child(2) { animation-delay: 0.4s; }
 .birthday-message p:nth-child(3) { animation-delay: 0.6s; }
 .birthday-message p:nth-child(4) { animation-delay: 0.8s; }
-.birthday-message p:nth-child(5) { animation-delay: 1s; }
 
 .photo-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -57,13 +122,13 @@ body {
 .photo-container {
     position: relative;
     overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
 .photo-container:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px);
 }
 
 .gallery-img {
@@ -75,21 +140,22 @@ body {
 
 .balloons {
     position: fixed;
-    width: 50px;
-    height: 60px;
-    background: radial-gradient(circle at 30% 30%, #ff69b4, #ff1493);
+    width: 40px;
+    height: 50px;
+    background: radial-gradient(circle at 30% 30%, #ff9a9e, #fad0c4);
     border-radius: 50%;
     animation: float 6s ease-in-out infinite;
     z-index: 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .balloons:nth-child(2) {
-    background: radial-gradient(circle at 30% 30%, #87ceeb, #4169e1);
+    background: radial-gradient(circle at 30% 30%, #a8e6cf, #dcedc1);
     animation-delay: 2s;
 }
 
 .balloons:nth-child(3) {
-    background: radial-gradient(circle at 30% 30%, #98fb98, #32cd32);
+    background: radial-gradient(circle at 30% 30%, #ffd3b6, #ffaaa5);
     animation-delay: 4s;
 }
 
@@ -110,6 +176,10 @@ body {
 }
 
 @media (max-width: 768px) {
+    .hero-section {
+        height: 50vh;
+    }
+
     .birthday-message h1 {
         font-size: 2.5rem;
     }
@@ -120,5 +190,14 @@ body {
     
     .photo-gallery {
         grid-template-columns: 1fr;
+    }
+
+    .music-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .music-button i {
+        font-size: 20px;
     }
 } 
